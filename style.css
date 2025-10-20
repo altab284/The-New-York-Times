@@ -1,0 +1,138 @@
+/* Base */
+:root{
+  --ink:#111;
+  --ink-2:#3a3a3a;
+  --ink-3:#6f6f6f;
+  --rule:#e5e5e5;
+  --rule-2:#d0d0d0;
+  --tape:#e9e9e9;
+  --bg:#fff;
+  --ath:#1a3c64;
+  --card:#f6f6f6;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Georgia, "Times New Roman", Times, serif}
+
+/* Utility strip */
+.util{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  gap:12px;
+  padding:8px 16px;
+  border-bottom:1px solid var(--rule);
+  font-size:13px;
+}
+.util-left{display:flex;gap:10px;align-items:center}
+.hamburger{font-size:16px}
+.util-left a{color:#2a5db0;text-decoration:none}
+.util-center{justify-self:center;display:flex;gap:14px}
+.util-link{color:#555;text-decoration:none}
+.util-link.is-active{font-weight:700;color:#000}
+.util-right{justify-self:end;display:flex;gap:8px}
+.btn{border:1px solid var(--rule-2);background:#f5f7fb;padding:6px 10px;border-radius:3px;font-size:12px;cursor:pointer}
+.btn-login{background:#f0f0f0}
+.btn-subscribe{background:#356aa0;color:#fff;border-color:#356aa0}
+
+/* Masthead */
+.masthead{
+  position:relative;
+  text-align:center;
+  padding:14px 16px 8px;
+}
+.nyt-logo{
+  margin:0;
+  font-size:56px;
+  line-height:1;
+  font-family: "Times New Roman", Times, serif;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+.market{
+  position:absolute;
+  right:16px; top:50%; transform:translateY(-50%);
+  font-size:12px; color:var(--ink-3);
+}
+.market .up{color:#2d7a2d;font-weight:700}
+
+/* Primary nav */
+.primary-nav{
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.nav-wrap{
+  max-width:1240px;margin:0 auto;
+  display:flex;gap:24px;justify-content:center;
+  padding:10px 12px;font-size:15px;
+}
+.nav-wrap a{cursor:default}
+.nav-wrap .athletic{color:#2a5db0}
+
+/* Page columns */
+.page{
+  max-width:1240px;margin:18px auto 0;
+  display:grid; gap:28px;
+  grid-template-columns: 360px 1fr 1fr; /* left fixed, center/right fluid like screenshot */
+}
+.col{min-height:200px}
+.left{padding-right:12px;border-right:1px solid var(--rule)}
+.center{padding:0 12px;border-right:1px solid var(--rule)}
+.right{padding-left:12px}
+
+/* Left column styles */
+.kicker{font-size:12px;color:#7a7a7a;font-weight:700;letter-spacing:.3px;margin-bottom:8px}
+.hed{font-size:28px;line-height:1.15;margin:0 0 10px}
+.dek{color:var(--ink-2);font-size:15px;line-height:1.6;margin:0 0 12px}
+.meta{font-size:12px;color:#6a6a6a;letter-spacing:.2px}
+
+/* Center conversation card */
+.conversation-card{
+  background:var(--card);
+  position:relative;
+  border:1px solid var(--rule);
+}
+.timeline{
+  position:absolute;left:40px;top:0;bottom:34px;
+  border-left:2px solid #2a2a2a;
+}
+.timeline .dot{
+  position:absolute;left:-5px;top:16px;width:10px;height:10px;
+  border-radius:50%;background:#000;
+}
+.card-inner{padding:20px 18px 8px 70px}
+.card-hed{margin:0 0 2px;font-size:20px}
+.card-sub{color:#6f6f6f;font-size:13px;margin-bottom:14px}
+.card-img{width:100%;height:auto;border:1px solid var(--rule);background:#ddd}
+.byline{margin:10px 0 8px;font-size:14px}
+.byline span{font-size:11px;letter-spacing:.5px;color:#555}
+.tape{
+  display:inline-block;background:var(--tape);
+  padding:6px 8px;border-radius:3px;font-size:12px;color:#444;
+  margin:8px 0 14px;
+}
+.credits{
+  font-size:11px;color:#8a8a8a;border-top:6px solid #222;
+  padding-top:8px;margin-top:10px;text-align:center;
+}
+
+/* Right column */
+.link-hed h3{margin:0 0 8px;font-size:20px}
+.small{font-size:11px;color:#6a6a6a}
+.feature{margin:12px 0 6px}
+.feature img{width:100%;height:auto;display:block;border:1px solid var(--rule)}
+.feature figcaption{font-size:10px;color:#7a7a7a;margin-top:6px;text-align:right}
+.food-hed h3{font-size:26px;line-height:1.25;margin:10px 0}
+.food-hed .dek{margin:6px 0 8px}
+.two-up{display:block;margin-top:10px}
+.two-up img{width:100%;height:auto;display:block;border:1px solid var(--rule)}
+
+/* bottom rule like in screenshot */
+.rule-bottom{border:0;border-top:1px solid var(--rule);margin:26px 0}
+
+/* (Optional) small responsiveness just to prevent overflow on narrow screens) */
+@media (max-width: 1100px){
+  .page{grid-template-columns: 1fr}
+  .left,.center{border-right:0;padding-right:0}
+  .center{padding-left:0}
+}
